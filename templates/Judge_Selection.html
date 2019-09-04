@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Judging</title>
+</head>
+
+<body>
+	<h1>Judging</h1>
+	<p>Please select a caption.</p>
+	<h2>NON-JUDGES: I know you can see this page. It's easier to do this way. No, you can't actually submit.</h2>
+	<img src="{{ image_path }}" width="50%">
+	<form action="/judge_selection" method = "POST">
+		{% for ps_pair in submissions %}
+		<input type="radio" name="Selection" value="{{ps_pair[0]}}">{{ps_pair[1]}}<br>
+		{% endfor %}
+
+		<input type="submit">
+	</form>
+</body>
+</html>
